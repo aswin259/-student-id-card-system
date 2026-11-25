@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student ID Card System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="logo">ID</span><div><h1>Student ID Card System</h1><p>Create and generate student identity cards</p></div></div>
+  </header>
+  <main class="layout">
+    <section class="panel form-panel">
+      <div class="section-heading"><div><h2>Student Details</h2><p>Enter the details to create an ID card.</p></div></div>
+      <form id="studentForm">
+        <label>Student full name<input id="name" placeholder="e.g. Arun Kumar" required></label>
+        <div class="two-col">
+          <label>Register number<input id="reg" placeholder="e.g. 24AI001" required></label>
+          <label>Department<input id="dept" placeholder="e.g. AI & DS" required></label>
+        </div>
+        <div class="two-col">
+          <label>Year / Class<input id="year" placeholder="e.g. II Year" required></label>
+          <label>Blood group<input id="blood" placeholder="e.g. O+"></label>
+        </div>
+        <label>College / Institution<input id="college" placeholder="College name" value="YOUR COLLEGE NAME" required></label>
+        <label>Academic year<input id="academic" placeholder="2026 - 2027" value="2026 - 2027"></label>
+        <label>Student photo<input id="photo" type="file" accept="image/*"></label>
+        <div class="actions">
+          <button type="submit" class="primary">Generate ID Card</button>
+          <button type="reset" class="secondary">Clear Form</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="panel preview-panel">
+      <div class="section-heading"><div><h2>ID Card Preview</h2><p>Your card updates when you generate it.</p></div><span class="status">PREVIEW</span></div>
+      <div class="card-wrap">
+        <article class="id-card" id="idCard">
+          <div class="card-head"><div class="crest">✦</div><div><h3 id="cardCollege">YOUR COLLEGE NAME</h3><p>STUDENT IDENTITY CARD</p></div></div>
+          <div class="card-body">
+            <div class="photo-frame"><img id="cardPhoto" alt="Student photo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='160' viewBox='0 0 140 160'%3E%3Crect width='140' height='160' fill='%23e8eef7'/%3E%3Ccircle cx='70' cy='54' r='27' fill='%2395a8c2'/%3E%3Cpath d='M20 150c4-36 23-53 50-53s46 17 50 53' fill='%2395a8c2'/%3E%3C/svg%3E"></div>
+            <div class="details">
+              <h2 id="cardName">Student Name</h2>
+              <p><b>Reg. No:</b> <span id="cardReg">—</span></p>
+              <p><b>Department:</b> <span id="cardDept">—</span></p>
+              <p><b>Year:</b> <span id="cardYear">—</span></p>
+              <p><b>Blood Group:</b> <span id="cardBlood">—</span></p>
+            </div>
+          </div>
+          <div class="card-foot"><span id="cardAcademic">2026 - 2027</span><span>AUTHORIZED STUDENT</span></div>
+        </article>
+      </div>
+      <div class="preview-actions">
+        <button id="printBtn" class="primary" type="button">Print / Save as PDF</button>
+        <button id="downloadBtn" class="secondary" type="button">Download Card Image</button>
+      </div>
+      <p class="hint">Tip: Use “Print / Save as PDF” to print the card or save it as a PDF.</p>
+    </section>
+  </main>
+  <footer>Student ID Card System · Simple offline project</footer>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
